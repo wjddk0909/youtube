@@ -5,9 +5,14 @@ import App from './app';
 import Youtube from './service/youtube';
 import axios from 'axios';
 
+// const httpClient = axios.create({
+//   baseURL: 'https://youtube.googleapis.com/youtube/v3',
+//   params : { key: 'AIzaSyBLPcQr0diW6r7J52-G1_JwAEf23uYr39g' }
+// });
+
 const httpClient = axios.create({
   baseURL: 'https://youtube.googleapis.com/youtube/v3',
-  params : { key: 'AIzaSyBLPcQr0diW6r7J52-G1_JwAEf23uYr39g' }
+  params : { key: process.env.REACT_APP_YOUTUBE_API_KEY }
 });
 
 const youtube = new Youtube(httpClient);
