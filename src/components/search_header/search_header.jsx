@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 const SearchHeader = ({ onSearch }) => {
 
-    const inputRef = useRef();
+    const inputRef = useRef();  // input엘리먼트에 접근해 가상돔 제어 하기 위해 ref사용
 
     const handleSearch = () => {
         const value = inputRef.current.value;
@@ -14,7 +14,8 @@ const SearchHeader = ({ onSearch }) => {
         handleSearch();
     }
 
-    const onKeyPress = event => {
+    // 엔터키를 누르면 검색이 되도록
+    const onKeyPress = event => {  
         if(event.key === 'Enter'){
             handleSearch(); 
         }
